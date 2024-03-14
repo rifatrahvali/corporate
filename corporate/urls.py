@@ -17,6 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from tcore.views import *
 
 
 #Tüm uygulama url adreslerini buradan yöneteceğiz.
@@ -29,4 +30,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('tcore.urls'),),
+    path('merhaba/', merhaba, name='merhaba_view'),
 ]

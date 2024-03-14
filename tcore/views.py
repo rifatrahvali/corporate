@@ -1,5 +1,6 @@
+from unittest import result
 from django.shortcuts import render
-
+from django.http import HttpResponse
 # Create your views here.
 
 
@@ -11,3 +12,8 @@ from django.shortcuts import render
 # template klasöründeki index html ile tarayıcıya sayfayı yönlendirir.
 def index(request):
     return render(request, 'index.html')
+
+def merhaba(request):
+	# Görünüm fonksiyonu içinde işlemleri gerçekleştirin result = "Merhaba, Django!" 
+	# HttpResponse ile yanıt döndürme
+	return HttpResponse("<h1>Selam response</h1>")
