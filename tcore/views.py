@@ -42,3 +42,13 @@ def category_detail_view(request, category_slug):
     # Şu anlık sadece alınan değerleri gösteriyoruz
     return render(request, 'category_detail.html',{'category_name': category_slug})
 
+
+def category_detail_view_with_id(request, category_id):
+# Burada, kategori ID'sini kullanarak gerekli veritabanı sorgularını yapabilirsiniz
+# Şu anlık sadece alınan değeri gösteriyoruz
+    return render(request, 'category_detail_with_id.html',{'category_id': category_id})
+
+def category_detail_view_with_name(req, category_name):
+    #soldaki kategori_ismi templatede bulunan html'e gönderiliyor
+    #template içerisinde değişkene aktarılıyor
+    return render(req,"category_detail_with_name.html",{"category_name":category_name})
