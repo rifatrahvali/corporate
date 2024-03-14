@@ -34,3 +34,11 @@ def website_info(request):
         "website" : "rifatrahvali.com"
     }
     return render(request,'website_info.html',context_data)
+
+#slug ile detay sayfası
+#http://127.0.0.1:8000/category/1/
+def category_detail_view(request, category_slug):
+    # Burada, kategori adını ve slug'ı kullanarak gerekli veritabanı sorgularını yapabilirsiniz
+    # Şu anlık sadece alınan değerleri gösteriyoruz
+    return render(request, 'category_detail.html',{'category_name': category_slug})
+
