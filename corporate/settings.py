@@ -54,7 +54,8 @@ ROOT_URLCONF = 'corporate.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # projemizin templates dosyalarının bulunduğu klasörü gösterdim.
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
