@@ -24,7 +24,6 @@ urlpatterns = [
     #name de alıyor id'de
     path('category/<slug:category_slug>/', category_detail_view, name='category_detail'),
 
-
-
+    path('mytemplate/',MyTemplateView.as_view(),name="mytemplate"),
     
 ]

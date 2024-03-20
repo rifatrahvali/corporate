@@ -5,6 +5,8 @@ from django.http import HttpResponse
 ### REDIRECT Ekle
 from django.shortcuts import redirect
 
+### TEMPLATE VIEW
+from django.views.generic import TemplateView
 
 # Create your views here.
 
@@ -61,3 +63,13 @@ def category_detail_view_with_name(request, category_name):
     #soldaki kategori_ismi templatede bulunan html'e gönderiliyor
     #template içerisinde değişkene aktarılıyor
     return render(request,"category_detail_with_name.html",{"category_name":category_name})
+
+### TEMPLATE VIEW ORNEGI ###
+class MyTemplateView(TemplateView):
+    template_name = "indexTemplate.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["message"] = "TemplateView özelliği ile kulanıldı." 
+        return context
+    
