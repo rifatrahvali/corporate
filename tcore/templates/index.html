@@ -3,10 +3,20 @@
 {% block title %}Anasayfa - Corporate - RR{% endblock title %}
 
 {% block content %}
-    <h2>ANASAYFA - Hoş Geldiniz</h2>
+    <h2>ANASAYFA - Hoş Geldiniz - CSS Denemesi</h2>
     <p>
         TCORE icerisinde templates içerisindeki index.html
         <br>
         Corporate Company'ye hoş geldiniz. Bizimle keşfedin!
     </p>
+
+    <h5>Hersayfanın Bu bölüne örnek olarak bir duyuru eklenecek - 
+        include olmaz ise tek tek index-about-referans gibi sayfalara girip bu bölümü yazmak zorunda kalmaktayız.
+        Bunun için bir duyuru sayfası oluşturup include ile istediğimiz bölümlere ekleyelim.
+    </h5>
+    <h6>
+        {% include "includes/info.html" %}
+    </h6>
+
+    <button onclick="showMessage()">Tıkla</button>
 {% endblock content %}
