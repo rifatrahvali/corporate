@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Title Etiketi {% endblock title %}</title>
+</head>
+<body>
+    <header>
+        <h1>
+            {% block header %} H1 Etiketi {% endblock header %}
+        </h1>
+        <nav>
+            <ul>
+                <li><a href=" {% url 'index' %} ">Anasayfa</a></li>
+                <li><a href=" {% url 'abouts' %} ">Hakkımızda</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %} 
+        
+        {% endblock content %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Rıfat Rahvalı Tüm Hakları Saklıdır.</p>
+    </footer>
+</body>
+</html>
