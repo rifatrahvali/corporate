@@ -12,9 +12,11 @@
 
     <p>NOT : Bu urller Aynı uygulama içerisinde urlname özelliği kullanarak linklendirildi.</p>
     <p><a href="{% url 'index' %}">Anasayfa</a></p>
-    <p><a href="{% url 'website_info' %}">WebSite Info</a></p>
-    <p><a href="{% url 'welcome_user' %}">Hoşgeldin Sayın Kullanıcı</a></p>
-    <p><a href="{% url 'goToGoogleUrlName' %}">Go To Google</a></p>
+    <p><a href="{% url 'website_info' %}">CONTEXT DATA : WebSite Info</a></p>
+    <p><a href="{% url 'welcome_user' %}">CONTEXT DATA : Hoşgeldin Sayın Kullanıcı</a></p>
+    <p><a href="{% url 'goToGoogleUrlName' %}">URL NAME Özelliği : Go To Google</a></p>
+    <p><a href="{% url 'category_detail_with_name' %}">DINAMIK URL -STRING : http://127.0.0.1:8000/category/teknoloji/ </a></p>
+    <p><a href="{% url 'category_detail_with_id' %}">DINAMIK URL - INT : http://127.0.0.1:8000/category/1/ </a></p>
 </body>
 </html>
 
