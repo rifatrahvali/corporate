@@ -27,5 +27,5 @@ urlpatterns = [
     # path('mytemplate/',MyTemplateView.as_view(),name="mytemplate"),
     
     path('',IndexView.as_view(),name="index"),
-    path("abouts/",AboutView.as_view(),name="abouts")
+    # path("abouts/",AboutView.as_view(),name="abouts")
 ]
