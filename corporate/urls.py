@@ -29,6 +29,10 @@ from tcore.views import *
 # app model & app template
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # tcore uygulaması
     path('',include('tcore.urls'),),
+
+    # tcore uygulaması içerisindeki views
     path('merhaba/', merhaba, name='merhaba_view'),
 ]

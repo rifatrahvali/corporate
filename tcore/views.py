@@ -1,6 +1,11 @@
 
 from django.shortcuts import render
 from django.http import HttpResponse
+
+### REDIRECT Ekle
+from django.shortcuts import redirect
+
+
 # Create your views here.
 
 
@@ -19,6 +24,8 @@ def merhaba(request):
 	#HttpResponse ile yanıt döndürme
     return HttpResponse(result)
 
+def goToGoogleView(request):
+    return redirect("https://www.google.com.tr/")
 
 def welcome_user(request):
     # Kullanıcı adını simüle etmek için bir bağlam (context) oluşturuyoruz
@@ -35,6 +42,8 @@ def website_info(request):
     }
     return render(request,'website_info.html',context_data)
 
+### DETAY ÖRNEKLERİ ###
+
 #slug ile detay sayfası
 #http://127.0.0.1:8000/category/1/
 def category_detail_view(request, category_slug):
@@ -48,7 +57,7 @@ def category_detail_view_with_id(request, category_id):
 # Şu anlık sadece alınan değeri gösteriyoruz
     return render(request, 'category_detail_with_id.html',{'category_id': category_id})
 
-def category_detail_view_with_name(req, category_name):
+def category_detail_view_with_name(request, category_name):
     #soldaki kategori_ismi templatede bulunan html'e gönderiliyor
     #template içerisinde değişkene aktarılıyor
-    return render(req,"category_detail_with_name.html",{"category_name":category_name})
+    return render(request,"category_detail_with_name.html",{"category_name":category_name})
