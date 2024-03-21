@@ -10,3 +10,7 @@ from .models import *
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ('full_name','phone','email','message')
+
+@admin.register(About)
+class AboutAdmin(admin.ModelAdmin):
+    list_display=('title',)
