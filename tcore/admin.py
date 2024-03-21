@@ -21,3 +21,13 @@ class AboutAdmin(admin.ModelAdmin):
     #about içeriğini silme özelliğinin disable'a çekilmesi
     def has_delete_permission(self, request, obj=None):
         return False
+    
+@admin.register(Services)
+class ServicesAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    group_fieldsets = True
+
+
+@admin.register(Slider)
+class SliderAdmin(admin.ModelAdmin):
+    list_display = ('title','image',)
