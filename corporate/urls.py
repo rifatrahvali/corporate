@@ -17,6 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+
+#media ve static dosyaları
+from django.conf.urls.static import static
+from django.conf import settings
+
 from tcore.views import *
 
 
@@ -35,4 +40,5 @@ urlpatterns = [
     
     # # tcore uygulaması içerisindeki views
     # path('merhaba/', merhaba, name='merhaba_view'),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
++ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
