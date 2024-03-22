@@ -1,12 +1,13 @@
 
+from typing import Any
 from django.shortcuts import render
 from django.http import HttpResponse
 
 ### REDIRECT Ekle
 from django.shortcuts import redirect
 
-# ### TEMPLATE VIEW
-from django.views.generic import TemplateView
+
+
 
 # # Create your views here.
 
@@ -73,9 +74,31 @@ from django.views.generic import TemplateView
 #         context["message"] = "TemplateView özelliği ile kulanıldı." 
 #         return context
 
+# ### TEMPLATE VIEW
+from django.views.generic import TemplateView , ListView
 
-class IndexView(TemplateView):
+from .models import *
+
+from tcore.models import Slider
+
+# from django.views.generic import BaseView, ListView
+
+# TemplateView ile vtden görsel çekme
+# class IndexView(TemplateView):
+#     template_name="index.html"
+        
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['sliders'] = Slider.objects.all()
+#         return context
+
+# ListView ile vtden görsel çekme
+class IndexView(ListView):
     template_name="index.html"
+    context_object_name = 'sliders'
+    #Slider modelinden geliyor.
+    queryset = Slider.objects.all()
+    #for döngüsü ile verileri template'e aktaralım.
 
 class AboutView(TemplateView):
     template_name="abouts.html"
@@ -88,3 +111,14 @@ class BlogsView(TemplateView):
 
 class ContactsView(TemplateView):
     template_name="contacts.html"
+
+# class CategoryDetailView(BaseView,ListView):
+#     model = Blog
+#     template_name = "category-details.html"
+#     context_object_name = 'Blogs'
+
+#     def get_queryset(self):
+#         slug = self.kwargs.get('slug')
+#         category = Category.objects.get(slug=slug)
+#         return Blog.objects.filter(categories=category)
+    
