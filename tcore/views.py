@@ -75,11 +75,11 @@ from django.shortcuts import redirect
 #         return context
 
 # ### TEMPLATE VIEW
-from django.views.generic import TemplateView , ListView
+from django.views.generic import TemplateView , ListView , DetailView
 
 from .models import *
 
-from tcore.models import Slider
+from tcore.models import *
 
 # from django.views.generic import BaseView, ListView
 
@@ -100,25 +100,40 @@ class IndexView(ListView):
     queryset = Slider.objects.all()
     #for döngüsü ile verileri template'e aktaralım.
 
+    #index sayfasındaki hakkımızda bölümüne veri aktarımı
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['Abouts'] = About.objects.first()
+        #contexti Services modelin aldık 
+        #index html'e Services ile hepsini gönderdik
+        #for ile herbir service'i döndürdük
+        context['Services'] = Services.objects.all()
+        context['Blogs'] = Blog.objects.all()
+        return context
+
 class AboutView(TemplateView):
     template_name="abouts.html"
+    #about sayfasındaki hakkımızda bölümüne veri aktarımı
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['Abouts'] = About.objects.first()
+        return context
 
 class ServicesView(TemplateView):
     template_name="services.html"
 
-class BlogsView(TemplateView):
+class BlogsView(ListView):
     template_name="blogs.html"
+    context_object_name = 'Blogs'
+    queryset = Blog.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['Categories'] = Category.objects.all()
+        return context
 
 class ContactsView(TemplateView):
     template_name="contacts.html"
 
-# class CategoryDetailView(BaseView,ListView):
-#     model = Blog
-#     template_name = "category-details.html"
-#     context_object_name = 'Blogs'
 
-#     def get_queryset(self):
-#         slug = self.kwargs.get('slug')
-#         category = Category.objects.get(slug=slug)
-#         return Blog.objects.filter(categories=category)
-    
+

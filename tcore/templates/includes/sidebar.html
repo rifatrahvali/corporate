@@ -1,0 +1,97 @@
+
+            <!-- Arama Yap Bölümü -->
+            <div class="row">
+                <!-- Arama Yap Kartı -->
+                <div class="col mt-3 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">İçerik Arama Bölümü & Sidebar Include</h5>
+                            <form action="">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Arama Bölümü">
+                                </div>
+                                <button type="submit" class="w-100 btn btn-primary">Ara</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Popüler Blogların Bölümü -->
+            <div class="row">
+                <div class="col mt-3 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Popüler Bloglar & Sidebar Include</h5>
+                            <ul class="list-group">
+                                <!-- Popüler Blog 1 Kartı -->
+                                <li class="list-group-item">
+                                    <h5 class="cart-title">Popüler Blog 1</h5>
+                                    <p class="card-text">
+                                        Popüper Blog Açıklama Bölümü 1 & Popüper Blog Açıklama Bölümü 1
+                                    </p>
+                                </li>
+                                <!-- Popüler Blog 2 Kartı -->
+                                <li class="list-group-item">
+                                    <h5 class="cart-title">Popüler Blog 2</h5>
+                                    <p class="card-text">
+                                        Popüper Blog Açıklama Bölümü 2 & Popüper Blog Açıklama Bölümü 2
+                                    </p>
+                                </li>
+                                <!-- Popüler Blog 3 Kartı -->
+                                <li class="list-group-item">
+                                    <h5 class="cart-title">Popüler Blog 3</h5>
+                                    <p class="card-text">
+                                        Popüper Blog Açıklama Bölümü 3 & Popüper Blog Açıklama Bölümü 3
+                                    </p>
+                                </li>
+                                <!-- Popüler Blog 4 Kartı -->
+                                <li class="list-group-item">
+                                    <h5 class="cart-title">Popüler Blog 4</h5>
+                                    <p class="card-text">
+                                        Popüper Blog Açıklama Bölümü 4 & Popüper Blog Açıklama Bölümü 4
+                                    </p>
+                                </li>
+                                <!-- Popüler Blog 5 Kartı -->
+                                <li class="list-group-item">
+                                    <h5 class="cart-title">Popüler Blog 5</h5>
+                                    <p class="card-text">
+                                        Popüper Blog Açıklama Bölümü 5 & Popüper Blog Açıklama Bölümü 5
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Kategori Bölümü -->
+            <div class="row">
+                <div class="col mt-3 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Kategori Bölümü & Sidebar Include</h5>
+                            <ul class="list-group list-group-flush">
+                                {% for category in Categories %}
+                                <a class="list-group-item" href="">{{ category.name }}</a>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tags Bölümü -->
+            <div class="row">
+                <div class="col mt-3 mb-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tag Bölümü & Sidebar Include</h5>
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-warning my-2 me-1">Tag 1</button>
+                                <button type="button" class="btn btn-warning my-2 me-1">Tag 2</button>
+                                <button type="button" class="btn btn-warning my-2 me-1">Tag 3</button>
+                                <button type="button" class="btn btn-warning my-2 me-1">Tag 4</button>
+                                <button type="button" class="btn btn-warning my-2 me-1">Tag 5</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

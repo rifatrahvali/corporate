@@ -31,4 +31,5 @@ urlpatterns = [
     path("services/",ServicesView.as_view(),name="services"),
     path("blogs/",BlogsView.as_view(),name="blogs"),
     path("contacts/",ContactsView.as_view(),name="contacts"),
+    # path('blog/<slug:slug>/',BlogDetailVies.as_view(),name='blog-detail'),
 ]
